@@ -1,175 +1,374 @@
-# 🌍 Travel Explorer - Responsive Web Design
+# 🌍 Travel Explorer
 
-A modern and responsive travel website built using **HTML5** and **CSS3**, demonstrating the use of **CSS Flexbox**, **CSS Grid**, and **Responsive Web Design** principles.
+A modern, responsive **full-stack travel booking web application** built with HTML, CSS, JavaScript, Node.js, Express.js and MongoDB.
 
-
----
-
-## 🚀 Live Demo
-
-After enabling GitHub Pages:
-
-https://pranav.5458/responsive-web-design-flexbox-grid/
+Travel Explorer allows users to explore destinations, register/login securely, make travel bookings and manage their bookings. It also includes a dedicated **Admin Dashboard** for managing users, bookings and travel statistics.
 
 ---
 
-# 📌 Features
+## ✨ Features
 
-### 🏠 Home Page
+### 👤 User Features
 
-- Modern Navigation Bar
-- Hero Section
-- Call-to-Action Buttons
-- Responsive Layout
+* User registration and login
+* JWT-based authentication
+* Secure password hashing with bcrypt
+* Responsive design for desktop, tablet and mobile
+* Explore travel destinations
+* Travel booking form
+* View personal bookings
+* Delete personal bookings
+* Dynamic navigation based on authentication status
+* Logout functionality
 
-### ✨ Services Section
+### 🛠️ Admin Features
 
-- Flexbox Layout
-- Responsive Service Cards
-- Hover Animations
-
-### 🌍 Popular Destinations
-
-- CSS Grid Layout
-- Destination Cards
-- Image Hover Effects
-
-### 📸 Travel Gallery
-
-- Responsive CSS Grid
-- Beautiful Travel Images
-- Mobile Friendly
-
-### ⭐ Testimonials
-
-- Customer Review Cards
-- Flexbox Layout
-
-### 📅 Booking Page
-
-- Professional Booking Form
-- Destination Selection
-- Travel Date Selection
-- Hotel Category
-- Budget Selection
-- Success Confirmation Message
-
-### 📞 Contact Information
-
-- Email
-- Phone Number
-- Office Location
+* Dedicated Admin Dashboard
+* Admin-only authentication
+* View total registered users
+* View total bookings
+* View total booking budget
+* View number of destinations
+* View all registered users
+* View all customer bookings
+* Delete bookings
+* Recent bookings section
+* Destination statistics
+* Most popular destinations
+* Most selected hotels
+* Hotel analysis
+* Budget analysis
 
 ---
 
-# 💻 Technologies Used
+## 🔐 Authentication & Security
 
-- HTML5
-- CSS3
-- CSS Flexbox
-- CSS Grid
-- Responsive Design
-- Media Queries
-- Google Fonts
+The application uses **JWT (JSON Web Tokens)** for authentication.
+
+### Authentication flow
+
+1. User registers an account.
+2. Password is securely hashed using bcrypt.
+3. User logs in with email and password.
+4. Backend generates a JWT token.
+5. Token is stored in the browser's local storage.
+6. Protected API requests send the token using the `Authorization` header.
+7. Admin routes additionally verify the user's admin role.
+
+Sensitive environment variables such as MongoDB credentials and JWT secrets are stored in `.env` files and excluded from Git using `.gitignore`.
 
 ---
 
-# 📂 Folder Structure
+## 🧰 Technologies Used
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+* Flexbox
+* CSS Grid
+* Responsive Design
+* Local Storage
+* Fetch API
+
+### Backend
+
+* Node.js
+* Express.js
+* REST APIs
+* JWT
+* bcrypt.js
+* Middleware
+
+### Database
+
+* MongoDB
+* MongoDB Atlas
+* Mongoose
+
+### Development Tools
+
+* Git
+* GitHub
+* VS Code
+* Postman
+* Nodemon
+
+---
+
+## 📁 Project Structure
 
 ```text
-responsive-web-design-flexbox-grid/
+responsive_travel_website/
 │
 ├── index.html
 ├── booking.html
-├── style.css
-├── README.md
+├── login.html
+├── register.html
+├── mybookings.html
 │
-└── images/
-    ├── hero.jpg
-    ├── img1.jpg
-    ├── img2.jpg
-    ├── img3.jpg
-    ├── img4.jpg
-    ├── img5.jpg
-    ├── img6.jpg
-    ├── img7.jpg
-    └── img8.jpg
+├── style.css
+├── script.js
+├── auth.js
+├── mybookings.js
+│
+├── admin.html
+├── admin.css
+├── admin.js
+│
+├── hero.jpg
+├── img1.jpg
+├── img2.jpg
+├── img3.jpg
+├── img4.jpg
+├── img5.jpg
+├── img6.jpg
+├── img7.jpg
+├── img8.jpg
+│
+├── backend/
+│   ├── config/
+│   │   └── db.js
+│   │
+│   ├── middleware/
+│   │   ├── adminMiddleware.js
+│   │   └── authMiddleware.js
+│   │
+│   ├── models/
+│   │   ├── Booking.js
+│   │   └── User.js
+│   │
+│   ├── routes/
+│   │   ├── adminRoutes.js
+│   │   ├── authRoutes.js
+│   │   ├── bookingRoutes.js
+│   │   └── protectedRoutes.js
+│   │
+│   ├── .gitignore
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
+│
+└── .gitignore
 ```
 
 ---
 
-# 📱 Responsive Design
+## 🔄 Application Flow
 
-The website is fully responsive and optimized for:
-
-- ✅ Desktop
-- ✅ Laptop
-- ✅ Tablet
-- ✅ Mobile
-
----
-
-# 🎯 Internship Requirements Covered
-
-✔ Responsive Web Design
-
-✔ CSS Flexbox
-
-✔ CSS Grid
-
-✔ Responsive Navigation
-
-✔ Responsive Cards
-
-✔ Responsive Image Gallery
-
-✔ Media Queries
-
-✔ Mobile Friendly Layout
-
----
+```text
+User
+ │
+ ├── Register
+ │      ↓
+ │   MongoDB
+ │
+ ├── Login
+ │      ↓
+ │   JWT Token
+ │
+ ├── Explore Destinations
+ │
+ ├── Create Booking
+ │      ↓
+ │   MongoDB
+ │
+ └── My Bookings
+        │
+        └── View / Delete
 
 
-
-# 🚀 Future Improvements
-
-- User Login
-- Payment Gateway
-- Interactive Map
-- Destination Search
-- Weather API
-- Booking Database
-- Travel Packages
-- Dark Mode
+Admin
+ │
+ └── Admin Login
+        ↓
+   JWT + Admin Role
+        ↓
+   Admin Dashboard
+        │
+        ├── Users
+        ├── Bookings
+        ├── Budget
+        ├── Destinations
+        └── Statistics
+```
 
 ---
 
-# 👨‍💻 Author
+## ⚙️ Local Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/pranav5458/responsive_travel_website.git
+```
+
+### 2. Open the project
+
+```bash
+cd responsive_travel_website
+```
+
+### 3. Install backend dependencies
+
+```bash
+cd backend
+npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env` file inside the `backend` folder:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
+
+Do not commit the `.env` file to GitHub.
+
+### 5. Start the backend
+
+```bash
+npm run dev
+```
+
+The backend will run locally at:
+
+```text
+http://localhost:5000
+```
+
+### 6. Run the frontend
+
+Open the frontend using a local development server such as **VS Code Live Server**.
+
+---
+
+## 🗄️ Database
+
+Travel Explorer uses **MongoDB Atlas** as its database.
+
+The application stores information such as:
+
+### Users
+
+* Name
+* Email
+* Password
+* Role
+
+### Bookings
+
+* User
+* Destination
+* Travel Date
+* Number of Travelers
+* Hotel
+* Budget
+
+---
+
+## 📊 Admin Dashboard
+
+The Admin Dashboard provides a centralized interface for managing the travel platform.
+
+It includes:
+
+* User management
+* Booking management
+* Booking deletion
+* Total users
+* Total bookings
+* Total budget
+* Destination count
+* Popular destination analysis
+* Hotel selection analysis
+* Budget analysis
+
+The dashboard is protected using JWT authentication and admin-role authorization.
+
+---
+
+## 📱 Responsive Design
+
+Travel Explorer is designed to work across:
+
+* 💻 Desktop
+* 💻 Laptop
+* 📱 Mobile
+* 📲 Tablet
+
+The navigation, booking forms, dashboard and content sections adapt to smaller screen sizes.
+
+---
+
+## 🧪 API Testing
+
+The backend APIs were tested using **Postman** during development.
+
+Authentication, booking, protected routes and admin APIs were tested before integrating them with the frontend.
+
+---
+
+## 🚀 Deployment
+
+The project is currently being prepared for deployment.
+
+The deployment plan is:
+
+```text
+Frontend
+   ↓
+GitHub Pages / Static Hosting
+
+Backend
+   ↓
+Cloud Backend Hosting
+
+Database
+   ↓
+MongoDB Atlas
+```
+
+Live deployment URLs will be added here after deployment is completed.
+
+---
+
+## 🔮 Future Improvements
+
+Possible future improvements include:
+
+* Online payment integration
+* Email booking confirmation
+* Advanced admin analytics
+* Booking status management
+* Search and filter destinations
+* User profile management
+* Image upload for destinations
+* Password reset functionality
+* Better admin charts and visualizations
+* Production-level security improvements
+
+---
+
+## 👨‍💻 Developer
 
 **Pranav Chawla**
 
-Computer Science Student
+Full Stack Web Developer
 
-Front-End Developer
+### Connect
 
-Machine Learning Enthusiast
-
----
-
-# 📬 Contact
-
-📧 Email: chawlapranav3232@gmail.com
-
-💼 LinkedIn: www.linkedin.com/in/pranav-chawla-a95b78290
-
-🐙 GitHub: https://github.com/pranav.5458
+* GitHub: https://github.com/pranav5458
+* LinkedIn: https://www.linkedin.com/in/pranav-chawla-5458
 
 ---
 
-# 📄 License
+## ⭐ Project
 
-This project is created for educational and internship purposes.
+If you find this project useful or interesting, consider giving the repository a ⭐ on GitHub.
 
----
-
-⭐ If you like this project, don't forget to give it a Star on GitHub.
+**Travel Explorer — Explore. Book. Travel.**
