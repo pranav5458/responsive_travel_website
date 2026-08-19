@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings | Travel Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Travel Explorer
+        </div>
+  <!-- MOBILE MENU BUTTON -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation"
+        >
+            ☰
+        </button>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#services">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#destinations">
+                    Destinations
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#gallery">
+                    Gallery
+                </a>
+            </li>
+
+   
+            <li>
+                <a href="index.html#contact">
+                    Contact
+                </a>
+            </li>
+
+
+
+        </ul>
+
+        <a href="booking.html" class="btn">
+            Book Now
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="page-hero">
+
+    <h1>
+        My Bookings
+    </h1>
+
+    <p>
+        View and manage all your upcoming trips.
+    </p>
+
+</section>
+
+
+<!-- ================= BOOKINGS ================= -->
+
+<section class="mybookings-section">
+
+    <div class="mybookings-container">
+
+        <div class="bookings-header">
+
+            <h2>
+                My Trips
+            </h2>
+
+            <a href="booking.html" class="btn">
+                + Book New Trip
+            </a>
+
+        </div>
+
+
+        <!-- Loading message -->
+
+        <div id="loadingMessage" class="booking-status">
+
+            Loading your bookings...
+
+        </div>
+
+
+        <!-- Error message -->
+
+        <div
+            id="errorMessage"
+            class="booking-status error"
+        ></div>
+
+
+        <!-- Bookings will appear here -->
+
+        <div
+            id="bookingsContainer"
+            class="bookings-grid"
+        ></div>
+
+
+        <!-- No bookings -->
+
+        <div
+            id="noBookings"
+            class="no-bookings"
+        >
+
+            <h3>
+                No bookings yet
+            </h3>
+
+            <p>
+                You haven't booked any trips yet.
+            </p>
+
+            <a
+                href="booking.html"
+                class="btn"
+            >
+                Plan Your First Trip
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Travel Explorer | All Rights Reserved
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+<script src="mybookings.js"></script>
+<script src="auth.js"></script>
+</body>
+
+</html>

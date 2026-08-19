@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Travel Explorer</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     ADMIN DASHBOARD
+========================================== -->
+
+<div class="admin-dashboard">
+
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <h2>Travel Explorer</h2>
+
+            <span>Admin Panel</span>
+
+        </div>
+
+
+        <nav class="admin-nav">
+
+            <button class="admin-nav-item active" data-section="dashboard">
+
+                📊
+                <span>Dashboard</span>
+
+            </button>
+
+
+            <button class="admin-nav-item" data-section="bookings">
+
+                📋
+                <span>Bookings</span>
+
+            </button>
+
+
+            <button class="admin-nav-item" data-section="users">
+
+                👥
+                <span>Users</span>
+
+            </button>
+
+
+            <button class="admin-nav-item" data-section="statistics">
+
+                📈
+                <span>Statistics</span>
+
+            </button>
+
+        </nav>
+
+
+       <div class="sidebar-bottom">
+
+    <!-- VISIT WEBSITE -->
+
+    <button
+        id="visitWebsiteBtn"
+        class="visit-website-btn"
+    >
+
+        🌐
+        <span>Visit Website</span>
+
+    </button>
+
+
+    <!-- LOGOUT -->
+
+    <button id="adminLogoutBtn">
+
+        🚪
+        <span>Logout</span>
+
+    </button>
+
+</div>
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="admin-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="admin-header">
+
+            <div>
+
+                <h1 id="pageTitle">
+                    Dashboard
+                </h1>
+
+                <p>
+                    Welcome back, Admin 👋
+                </p>
+
+            </div>
+
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>Administrator</strong>
+
+                    <small>Admin</small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ==========================================
+             DASHBOARD SECTION
+        =========================================== -->
+
+        <section
+            id="dashboardSection"
+            class="admin-section active-section"
+        >
+
+            <div class="section-heading">
+
+                <h2>
+                    Overview
+                </h2>
+
+                <p>
+                    Here's what's happening with your travel business.
+                </p>
+
+            </div>
+
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Users
+                        </span>
+
+                        <h3 id="totalUsers">
+                            0
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Bookings
+                        </span>
+
+                        <h3 id="totalBookings">
+                            0
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        💰
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Budget
+                        </span>
+
+                        <h3 id="totalBudget">
+                            ₹0
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🌍
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Destinations
+                        </span>
+
+                        <h3 id="totalDestinations">
+                            0
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RECENT BOOKINGS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Recent Bookings
+                        </h2>
+
+                        <p>
+                            Latest customer bookings
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="view-all-btn"
+                        data-section="bookings"
+                    >
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="recentBookings"
+                    class="table-container"
+                >
+
+                    <p class="loading-text">
+                        Loading bookings...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             BOOKINGS SECTION
+        =========================================== -->
+
+        <section
+            id="bookingsSection"
+            class="admin-section"
+        >
+
+            <div class="section-heading">
+
+                <h2>
+                    All Bookings
+                </h2>
+
+                <p>
+                    Manage all customer travel bookings.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div
+                    id="allBookings"
+                    class="table-container"
+                >
+
+                    <p class="loading-text">
+                        Loading bookings...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             USERS SECTION
+        =========================================== -->
+
+        <section
+            id="usersSection"
+            class="admin-section"
+        >
+
+            <div class="section-heading">
+
+                <h2>
+                    Users
+                </h2>
+
+                <p>
+                    View registered Travel Explorer users.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div
+                    id="allUsers"
+                    class="table-container"
+                >
+
+                    <p class="loading-text">
+                        Loading users...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+<!-- ==========================================
+     STATISTICS SECTION
+========================================== -->
+
+<section
+    id="statisticsSection"
+    class="admin-section"
+>
+
+    <div class="section-heading">
+
+        <h2>
+            Statistics
+        </h2>
+
+        <p>
+            Analyze your travel booking data.
+        </p>
+
+    </div>
+
+
+    <!-- ==========================================
+         STATISTICS SUMMARY CARDS
+    =========================================== -->
+
+    <div class="stats-grid">
+
+
+        <!-- TOTAL USERS -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                👥
+            </div>
+
+            <div>
+
+                <span>
+                    Total Users
+                </span>
+
+                <h3 id="statisticsUsers">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOTAL BOOKINGS -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📋
+            </div>
+
+            <div>
+
+                <span>
+                    Total Bookings
+                </span>
+
+                <h3 id="statisticsBookings">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOTAL TRAVELERS -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🧳
+            </div>
+
+            <div>
+
+                <span>
+                    Total Travelers
+                </span>
+
+                <h3 id="statisticsTravelers">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOTAL BUDGET -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                💰
+            </div>
+
+            <div>
+
+                <span>
+                    Total Budget
+                </span>
+
+                <h3 id="statisticsBudget">
+                    ₹0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- AVERAGE BUDGET -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📊
+            </div>
+
+            <div>
+
+                <span>
+                    Average Budget
+                </span>
+
+                <h3 id="statisticsAverageBudget">
+                    ₹0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- UNIQUE DESTINATIONS -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🌍
+            </div>
+
+            <div>
+
+                <span>
+                    Destinations
+                </span>
+
+                <h3 id="statisticsDestinations">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         BUSINESS INSIGHTS
+    =========================================== -->
+
+    <div class="stats-grid">
+
+
+        <!-- POPULAR DESTINATION -->
+
+        <div class="dashboard-card">
+
+            <h2>
+                🏆 Most Popular Destination
+            </h2>
+
+            <div
+                id="popularDestination"
+                class="statistics-highlight"
+            >
+
+                <p class="loading-text">
+                    Loading...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- POPULAR HOTEL -->
+
+        <div class="dashboard-card">
+
+            <h2>
+                🏨 Most Selected Hotel
+            </h2>
+
+            <div
+                id="popularHotel"
+                class="statistics-highlight"
+            >
+
+                <p class="loading-text">
+                    Loading...
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         DESTINATION ANALYSIS
+    =========================================== -->
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    🌍 Destination Analysis
+                </h2>
+
+                <p>
+                    Number of bookings by destination.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="destinationStats"
+            class="destination-stats"
+        >
+
+            <p class="loading-text">
+                Loading statistics...
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         HOTEL ANALYSIS
+    =========================================== -->
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    🏨 Hotel Analysis
+                </h2>
+
+                <p>
+                    Most selected hotels by customers.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="hotelStats"
+            class="destination-stats"
+        >
+
+            <p class="loading-text">
+                Loading hotel statistics...
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         BUDGET ANALYSIS
+    =========================================== -->
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    💰 Budget Analysis
+                </h2>
+
+                <p>
+                    Overview of customer travel budgets.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="budgetStats"
+            class="destination-stats"
+        >
+
+            <p class="loading-text">
+                Loading budget statistics...
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+       
+    
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

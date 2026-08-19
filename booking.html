@@ -28,11 +28,18 @@
 <nav class="navbar">
 
 <div class="logo">
-
 Travel Explorer
-
 </div>
+<!-- MOBILE MENU BUTTON -->
 
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation"
+        >
+            ☰
+        </button>
+        
 <ul class="nav-links">
 
 <li><a href="index.html">Home</a></li>
@@ -45,7 +52,10 @@ Travel Explorer
 
 <li><a href="index.html#testimonials">Testimonials</a></li>
 
+
+
 <li><a href="index.html#contact">Contact</a></li>
+
 
 </ul>
 
@@ -55,23 +65,21 @@ Travel Explorer
 
 </header>
 
+
 <!-- ================= HERO ================= -->
 
 <section class="page-hero">
 
 <h1>
-
 Book Your Dream Vacation
-
 </h1>
 
 <p>
-
 Complete the form below and our travel experts will contact you shortly.
-
 </p>
 
 </section>
+
 
 <!-- ================= BOOKING FORM ================= -->
 
@@ -79,115 +87,207 @@ Complete the form below and our travel experts will contact you shortly.
 
 <div class="booking-container">
 
-<h2>
+<h2>Travel Booking Form</h2>
 
-Travel Booking Form
 
-</h2>
+<form id="bookingForm">
 
-<form>
+
+<!-- FULL NAME -->
 
 <label>Full Name</label>
 
-<input type="text" placeholder="Enter your full name" required>
+<input
+    type="text"
+    id="fullName"
+    placeholder="Enter your full name"
+    required
+>
+
+
+<!-- EMAIL -->
 
 <label>Email Address</label>
 
-<input type="email" placeholder="Enter your email" required>
+<input
+    type="email"
+    id="email"
+    placeholder="Enter your email"
+    required
+>
+
+
+<!-- PHONE -->
 
 <label>Phone Number</label>
 
-<input type="tel" placeholder="+91 xxxxxxxxxx" required>
+<input
+    type="tel"
+    id="phone"
+    placeholder="+91 xxxxxxxxxx"
+    required
+>
+
+
+<!-- DESTINATION -->
 
 <label>Select Destination</label>
 
-<select required>
+<select id="destination" required>
 
 <option value="">Choose Destination</option>
 
-<option>Rajasthan</option>
+<option value="Rajasthan">Rajasthan</option>
 
-<option>Uttar Pradesh</option>
+<option value="Uttar Pradesh">Uttar Pradesh</option>
 
-<option>Uttarakhand</option>
+<option value="Uttarakhand">Uttarakhand</option>
 
-<option>Kashmir</option>
+<option value="Kashmir">Kashmir</option>
 
-<option>Assam</option>
+<option value="Assam">Assam</option>
 
-<option>Punjab</option>
+<option value="Punjab">Punjab</option>
 
 </select>
+
+<!-- CITY / PLACE -->
+
+<label>Select City / Place</label>
+
+<select id="city" required>
+
+    <option value="">Choose a destination first</option>
+
+</select>
+
+<!-- PLACES TO VISIT -->
+
+<div class="places-section" id="placesContainer">
+
+    <label>Places You Want to Visit</label>
+
+    <p class="places-helper">
+        Select the places you would like to include in your trip.
+    </p>
+
+</div>
+
+<!-- TRAVELERS -->
 
 <label>Number of Travelers</label>
 
-<input type="number" min="1" max="20" placeholder="Number of Travelers">
+<input
+    type="number"
+    id="travelers"
+    min="1"
+    max="20"
+    placeholder="Number of Travelers"
+    required
+>
+
+
+<!-- DEPARTURE DATE -->
 
 <label>Departure Date</label>
 
-<input type="date">
+<input
+    type="date"
+    id="travelDate"
+    required
+>
+
+
+<!-- RETURN DATE -->
 
 <label>Return Date</label>
 
-<input type="date">
+<input
+    type="date"
+    id="returnDate"
+    required
+>
 
-<label>Hotel Category</label>
 
-<select>
+<!-- RECOMMENDED HOTELS -->
 
-<option>3 Star</option>
+<label>Recommended Hotels</label>
 
-<option>4 Star</option>
+<select id="hotel" required>
 
-<option>5 Star</option>
-
-<option>Luxury Resort</option>
-
-</select>
-
-<label>Estimated Budget</label>
-
-<select>
-
-<option>₹50,000 - ₹1,00,000</option>
-
-<option>₹1,00,000 - ₹2,00,000</option>
-
-<option>₹2,00,000 - ₹5,00,000</option>
-
-<option>Above ₹5,00,000</option>
+<option value="">
+Select a destination first
+</option>
 
 </select>
 
-<label>Special Requests</label>
 
-<textarea rows="5" placeholder="Write your special requests..."></textarea>
+<!-- CUSTOM BUDGET -->
 
-<button class="btn" type="submit">
+<label>Your Travel Budget</label>
+
+<div class="budget-input">
+
+<span>₹</span>
+
+<input
+    type="number"
+    id="budget"
+    placeholder="Enter your budget"
+    min="1"
+    required
+>
+
+</div>
+
+<small class="booking-helper-text">
+Enter your approximate total travel budget.
+</small>
+
+
+<!-- SPECIAL REQUESTS -->
+
+<label class="special-request-label">Special Requests</label>
+
+<textarea
+    id="specialRequests"
+    class="special-request-textarea"
+    rows="5"
+    placeholder="Write your special requests..."
+></textarea>
+
+
+<!-- SUBMIT -->
+
+<button
+    class="btn"
+    type="submit"
+>
 
 Book My Trip
 
 </button>
 
-<form onsubmit="showMessage(event)">
 
 </form>
-<div id="successMessage" class="success-message">
 
 
+<div
+    id="successMessage"
+    class="success-message"
+></div>
 
 </div>
 
 </section>
+
 
 <!-- ================= WHY BOOK WITH US ================= -->
 
 <section class="services">
 
 <h2>
-
 Why Book With Us?
-
 </h2>
 
 <div class="service-container">
@@ -197,33 +297,29 @@ Why Book With Us?
 <h3>💰 Best Price Guarantee</h3>
 
 <p>
-
 Competitive pricing with premium travel experiences.
-
 </p>
 
 </div>
+
 
 <div class="service-card">
 
 <h3>🛡 Safe & Secure</h3>
 
 <p>
-
 Trusted by thousands of happy travelers worldwide.
-
 </p>
 
 </div>
+
 
 <div class="service-card">
 
 <h3>📞 24/7 Support</h3>
 
 <p>
-
 Dedicated travel experts available anytime.
-
 </p>
 
 </div>
@@ -232,32 +328,21 @@ Dedicated travel experts available anytime.
 
 </section>
 
+
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
 <p>
-
 © 2026 Travel Explorer | All Rights Reserved
-
 </p>
 
 </footer>
 
 
+<script src="script.js"></script>
+<script src="auth.js"></script>
+
 </body>
-<script>
-
-function showMessage(event){
-
-event.preventDefault();
-
-document.getElementById("successMessage").style.display="block";
-
-event.target.reset();
-
-}
-
-</script>
 
 </html>

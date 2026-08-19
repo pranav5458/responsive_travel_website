@@ -1,0 +1,1457 @@
+/* ==========================================
+   TRAVEL EXPLORER - ADMIN DASHBOARD
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f7fb;
+    color: #14213d;
+}
+
+
+/* ==========================================
+   MAIN DASHBOARD
+   ========================================== */
+
+.admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   SIDEBAR
+   ========================================== */
+
+.sidebar {
+    width: 260px;
+    min-height: 100vh;
+
+    background: #ffffff;
+
+    border-right: 1px solid #e6ebf2;
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    z-index: 100;
+}
+
+
+/* LOGO */
+
+.sidebar-logo {
+    padding: 28px 24px;
+
+    border-bottom: 1px solid #eef1f5;
+}
+
+.sidebar-logo h2 {
+    color: #12a8e0;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    margin-bottom: 4px;
+}
+
+.sidebar-logo span {
+    font-size: 12px;
+
+    color: #7d8797;
+
+    font-weight: 500;
+}
+
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+
+.admin-nav {
+    padding: 25px 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.admin-nav-item {
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #687386;
+
+    padding: 14px 16px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.admin-nav-item:hover {
+    background: #f0f9fd;
+
+    color: #12a8e0;
+}
+
+.admin-nav-item.active {
+    background: #12a8e0;
+
+    color: #ffffff;
+
+    box-shadow: 0 5px 15px rgba(18, 168, 224, 0.20);
+}
+
+.admin-nav-item span {
+    flex: 1;
+}
+
+
+/* ==========================================
+   SIDEBAR BOTTOM
+   ========================================== */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    padding: 20px 15px;
+
+    border-top: 1px solid #eef1f5;
+}
+
+.sidebar-bottom button {
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #687386;
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.sidebar-bottom button:hover {
+    background: #fff2f2;
+
+    color: #e63946;
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+
+.admin-main {
+    margin-left: 260px;
+
+    width: calc(100% - 260px);
+
+    min-height: 100vh;
+
+    padding: 30px 35px;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.admin-header {
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 22px 26px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    border: 1px solid #e8edf3;
+
+    box-shadow: 0 5px 20px rgba(30, 55, 90, 0.05);
+}
+
+.admin-header h1 {
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #14213d;
+
+    margin-bottom: 4px;
+}
+
+.admin-header p {
+    color: #7c8798;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   ADMIN PROFILE
+   ========================================== */
+
+.admin-profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.admin-avatar {
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 50%;
+
+    background: #12a8e0;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.admin-profile strong {
+    display: block;
+
+    font-size: 13px;
+
+    color: #14213d;
+}
+
+.admin-profile small {
+    color: #7d8797;
+
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   SECTIONS
+   ========================================== */
+
+.admin-section {
+    display: none;
+}
+
+.admin-section.active-section {
+    display: block;
+}
+
+
+/* ==========================================
+   SECTION HEADING
+   ========================================== */
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+
+    color: #14213d;
+
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    color: #7d8797;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   STATISTICS GRID
+   ========================================== */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   STAT CARD
+   ========================================== */
+
+.stat-card {
+    background: #ffffff;
+
+    border: 1px solid #e8edf3;
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow: 0 5px 20px rgba(30, 55, 90, 0.04);
+
+    transition: 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(30, 55, 90, 0.08);
+}
+
+.stat-icon {
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 12px;
+
+    background: #eef9fd;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.stat-card span {
+    display: block;
+
+    color: #7d8797;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+.stat-card h3 {
+    font-size: 23px;
+
+    color: #14213d;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   DASHBOARD CARD
+   ========================================== */
+
+.dashboard-card {
+    background: #ffffff;
+
+    border: 1px solid #e8edf3;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    box-shadow: 0 5px 20px rgba(30, 55, 90, 0.04);
+
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   CARD HEADER
+   ========================================== */
+
+.card-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    font-size: 18px;
+
+    color: #14213d;
+
+    margin-bottom: 4px;
+}
+
+.card-header p {
+    font-size: 12px;
+
+    color: #8a94a4;
+}
+
+
+/* ==========================================
+   VIEW ALL BUTTON
+   ========================================== */
+
+.view-all-btn {
+    border: none;
+
+    background: #eef9fd;
+
+    color: #12a8e0;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.view-all-btn:hover {
+    background: #12a8e0;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   TABLE CONTAINER
+   ========================================== */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.table-container table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 700px;
+}
+
+.table-container th {
+    text-align: left;
+
+    background: #f7f9fc;
+
+    color: #667085;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    padding: 13px 14px;
+
+    border-bottom: 1px solid #e7ebf0;
+
+    white-space: nowrap;
+}
+
+.table-container td {
+    padding: 15px 14px;
+
+    border-bottom: 1px solid #eef1f5;
+
+    color: #344054;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+.table-container tr:last-child td {
+    border-bottom: none;
+}
+
+.table-container tr:hover td {
+    background: #fafcfe;
+}
+
+
+/* ==========================================
+   LOADING
+   ========================================== */
+
+.loading-text {
+    text-align: center;
+
+    color: #8a94a4;
+
+    padding: 35px 15px;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+
+.empty-state {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    color: #8a94a4;
+}
+
+.empty-state-icon {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.empty-state h3 {
+    color: #475467;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+.empty-state p {
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   BADGES
+   ========================================== */
+
+.role-badge {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    background: #eef9fd;
+
+    color: #0b92c7;
+}
+
+.booking-badge {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    background: #eef8ef;
+
+    color: #31833f;
+}
+
+
+/* ==========================================
+   ACTION BUTTONS
+   ========================================== */
+
+.delete-booking-btn {
+    border: none;
+
+    background: #fff1f2;
+
+    color: #e63946;
+
+    padding: 7px 11px;
+
+    border-radius: 7px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.delete-booking-btn:hover {
+    background: #e63946;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   DESTINATION STATISTICS
+   ========================================== */
+
+.destination-stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.destination-stat {
+    border: 1px solid #e8edf3;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    background: #fafcfe;
+}
+
+.destination-stat h3 {
+    font-size: 14px;
+
+    color: #14213d;
+
+    margin-bottom: 7px;
+}
+
+.destination-stat p {
+    font-size: 12px;
+
+    color: #7d8797;
+}
+
+
+/* ==========================================
+   RESPONSIVE — TABLET
+   ========================================== */
+
+@media (max-width: 1100px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .destination-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE — MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar-logo {
+        padding: 20px 10px;
+
+        text-align: center;
+    }
+
+    .sidebar-logo h2 {
+        font-size: 0;
+
+        margin: 0;
+    }
+
+    .sidebar-logo h2::after {
+        content: "TE";
+
+        font-size: 18px;
+
+        font-weight: 800;
+    }
+
+    .sidebar-logo span {
+        display: none;
+    }
+
+    .admin-nav {
+        padding: 20px 8px;
+    }
+
+    .admin-nav-item {
+        justify-content: center;
+
+        padding: 13px 8px;
+    }
+
+    .admin-nav-item span {
+        display: none;
+    }
+
+    .sidebar-bottom {
+        padding: 15px 8px;
+    }
+
+    .sidebar-bottom button {
+        justify-content: center;
+
+        padding: 13px 8px;
+    }
+
+    .sidebar-bottom button span {
+        display: none;
+    }
+
+    .admin-main {
+        margin-left: 70px;
+
+        width: calc(100% - 70px);
+
+        padding: 20px 15px;
+    }
+
+    .admin-header {
+        padding: 18px;
+
+        align-items: flex-start;
+    }
+
+    .admin-header h1 {
+        font-size: 20px;
+    }
+
+    .admin-profile {
+        display: none;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-card {
+        padding: 18px;
+    }
+
+}
+
+
+/* ==========================================
+   VERY SMALL SCREENS
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    .admin-main {
+        padding: 15px 10px;
+    }
+
+    .admin-header {
+        margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 18px;
+    }
+
+    .stat-card {
+        padding: 18px;
+    }
+
+}
+/* ==========================================
+   STATISTICS DASHBOARD
+========================================== */
+
+
+/* ------------------------------------------
+   STATISTICS SUMMARY GRID
+------------------------------------------ */
+
+#statisticsSection .stats-grid {
+    margin-bottom: 25px;
+}
+
+
+/* ------------------------------------------
+   STATISTICS HIGHLIGHT CARDS
+------------------------------------------ */
+
+#statisticsSection .statistics-highlight {
+    margin-top: 18px;
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+}
+
+
+/* Highlight content */
+
+.statistics-highlight-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    text-align: center;
+}
+
+
+.statistics-highlight-content strong {
+    font-size: 24px;
+    font-weight: 700;
+
+    color: #1f2937;
+}
+
+
+.statistics-highlight-content span {
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* ------------------------------------------
+   STATISTICS LIST
+------------------------------------------ */
+
+.statistics-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* Individual statistic row */
+
+.stat-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 14px 18px;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.stat-row:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Destination / hotel name */
+
+.stat-destination {
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #1f2937;
+}
+
+
+/* Booking count */
+
+.stat-count {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #6b7280;
+
+    white-space: nowrap;
+}
+
+
+/* ------------------------------------------
+   BUDGET ANALYSIS
+------------------------------------------ */
+
+.budget-stat-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.budget-stat-item {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 110px;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    text-align: center;
+}
+
+
+.budget-stat-item span {
+    font-size: 13px;
+
+    color: #6b7280;
+
+    font-weight: 500;
+}
+
+
+.budget-stat-item strong {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #1f2937;
+}
+
+
+/* ------------------------------------------
+   STATISTICS SECTION SPACING
+------------------------------------------ */
+
+#statisticsSection .dashboard-card {
+    margin-bottom: 24px;
+}
+
+
+#statisticsSection .dashboard-card:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ------------------------------------------
+   STATISTICS HEADINGS
+------------------------------------------ */
+
+#statisticsSection .dashboard-card h2 {
+    margin-bottom: 5px;
+}
+
+
+#statisticsSection .card-header p {
+    margin-top: 4px;
+}
+
+
+/* ------------------------------------------
+   EMPTY STATISTICS STATE
+------------------------------------------ */
+
+#statisticsSection .empty-state {
+    padding: 35px 20px;
+
+    text-align: center;
+}
+
+
+#statisticsSection .empty-state-icon {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ------------------------------------------
+   LOADING TEXT
+------------------------------------------ */
+
+#statisticsSection .loading-text {
+    text-align: center;
+
+    padding: 25px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   RESPONSIVE STATISTICS
+========================================== */
+
+
+/* Tablets */
+
+@media (max-width: 1000px) {
+
+    .budget-stat-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    #statisticsSection .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .budget-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .stat-row {
+        padding: 12px 14px;
+
+        gap: 10px;
+    }
+
+
+    .stat-destination {
+        font-size: 14px;
+    }
+
+
+    .stat-count {
+        font-size: 13px;
+    }
+
+
+    .statistics-highlight-content strong {
+        font-size: 20px;
+    }
+
+}
+/* ==========================================
+   FINAL POLISH — ADMIN STATISTICS
+========================================== */
+
+
+/* ------------------------------------------
+   STATISTICS SECTION
+------------------------------------------ */
+
+#statisticsSection {
+    animation: statisticsFadeIn 0.35s ease;
+}
+
+@keyframes statisticsFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ------------------------------------------
+   SUMMARY CARDS
+------------------------------------------ */
+
+#statisticsSection .stat-card {
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#statisticsSection .stat-card::after {
+    content: "";
+
+    position: absolute;
+
+    right: -28px;
+    bottom: -28px;
+
+    width: 95px;
+    height: 95px;
+
+    border-radius: 50%;
+
+    background: rgba(37, 99, 235, 0.30);
+
+    box-shadow:
+        0 0 0 12px rgba(37, 99, 235, 0.06);
+
+    pointer-events: none;
+}
+
+#statisticsSection .stat-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ------------------------------------------
+   STAT ICON POLISH
+------------------------------------------ */
+
+#statisticsSection .stat-icon {
+    transition:
+        transform 0.25s ease;
+}
+
+#statisticsSection .stat-card:hover .stat-icon {
+    transform: scale(1.08);
+}
+
+
+/* ------------------------------------------
+   STAT NUMBERS
+------------------------------------------ */
+
+#statisticsSection .stat-card h3 {
+    letter-spacing: -0.5px;
+}
+
+
+/* ------------------------------------------
+   INSIGHT CARDS
+------------------------------------------ */
+
+#statisticsSection
+.statistics-highlight-content strong {
+    line-height: 1.25;
+}
+
+#statisticsSection
+.statistics-highlight-content span {
+    background: rgba(0, 0, 0, 0.035);
+
+    padding: 5px 11px;
+
+    border-radius: 20px;
+}
+
+
+/* ------------------------------------------
+   DESTINATION + HOTEL ROWS
+------------------------------------------ */
+
+#statisticsSection .stat-row {
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#statisticsSection .stat-row::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background: currentColor;
+
+    opacity: 0;
+}
+
+#statisticsSection .stat-row:hover::before {
+    opacity: 0.45;
+}
+
+#statisticsSection .stat-row:hover {
+    background: #ffffff;
+}
+
+
+/* ------------------------------------------
+   BOOKING COUNT BADGE
+------------------------------------------ */
+
+#statisticsSection .stat-count {
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(0, 0, 0, 0.04);
+}
+
+
+/* ------------------------------------------
+   BUDGET CARDS
+------------------------------------------ */
+
+#statisticsSection .budget-stat-item {
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#statisticsSection .budget-stat-item:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+#statisticsSection .budget-stat-item strong {
+    letter-spacing: -0.3px;
+}
+
+
+/* ------------------------------------------
+   CARD HEADER POLISH
+------------------------------------------ */
+
+#statisticsSection .card-header {
+    align-items: center;
+}
+
+#statisticsSection .card-header h2 {
+    font-weight: 700;
+}
+
+
+/* ------------------------------------------
+   SECTION HEADING
+------------------------------------------ */
+
+#statisticsSection .section-heading h2 {
+    letter-spacing: -0.4px;
+}
+
+#statisticsSection .section-heading p {
+    line-height: 1.6;
+}
+
+
+/* ------------------------------------------
+   LOADING / EMPTY STATES
+------------------------------------------ */
+
+#statisticsSection .loading-text {
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ------------------------------------------
+   BETTER CARD SPACING
+------------------------------------------ */
+
+#statisticsSection .dashboard-card {
+    padding: 24px;
+}
+
+
+/* ------------------------------------------
+   TABLET
+------------------------------------------ */
+
+@media (max-width: 900px) {
+
+    #statisticsSection .dashboard-card {
+        padding: 20px;
+    }
+
+}
+
+
+/* ------------------------------------------
+   MOBILE
+------------------------------------------ */
+
+@media (max-width: 600px) {
+
+    #statisticsSection .dashboard-card {
+        padding: 18px;
+    }
+
+    #statisticsSection .stat-card {
+        padding: 18px;
+    }
+
+    #statisticsSection .stat-card h3 {
+        font-size: 22px;
+    }
+
+    #statisticsSection
+    .statistics-highlight-content strong {
+        font-size: 19px;
+    }
+
+    #statisticsSection .stat-row {
+        padding: 12px;
+    }
+
+    #statisticsSection .stat-count {
+        padding: 5px 9px;
+    }
+
+}
+
+
+/* ------------------------------------------
+   REDUCED MOTION
+------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #statisticsSection,
+    #statisticsSection .stat-card,
+    #statisticsSection .stat-row,
+    #statisticsSection .budget-stat-item,
+    #statisticsSection .stat-icon {
+        animation: none;
+        transition: none;
+    }
+
+}
