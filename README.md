@@ -1,8 +1,12 @@
 # 🌍 Travel Explorer
 
-A modern, responsive **full-stack travel booking web application** built with HTML, CSS, JavaScript, Node.js, Express.js and MongoDB.
+A modern, responsive **full-stack travel booking web application** built with **HTML, CSS, JavaScript, Node.js, Express.js and MongoDB**.
 
-Travel Explorer allows users to explore destinations, register/login securely, make travel bookings and manage their bookings. It also includes a dedicated **Admin Dashboard** for managing users, bookings and travel statistics.
+Travel Explorer allows users to explore destinations, create accounts, securely log in, make travel bookings and manage their bookings. The application also includes a dedicated **Admin Dashboard** with role-based authorization, booking management and travel statistics.
+
+🔗 **Live Website:** https://pranav5458.github.io/responsive_travel_website/
+🔗 **Backend API:** https://responsive-travel-website-wq53.onrender.com
+🔗 **GitHub Repository:** https://github.com/pranav5458/responsive_travel_website
 
 ---
 
@@ -13,7 +17,7 @@ Travel Explorer allows users to explore destinations, register/login securely, m
 * User registration and login
 * JWT-based authentication
 * Secure password hashing with bcrypt
-* Responsive design for desktop, tablet and mobile
+* Responsive desktop, tablet and mobile design
 * Explore travel destinations
 * Travel booking form
 * View personal bookings
@@ -25,6 +29,7 @@ Travel Explorer allows users to explore destinations, register/login securely, m
 
 * Dedicated Admin Dashboard
 * Admin-only authentication
+* Role-based authorization
 * View total registered users
 * View total bookings
 * View total booking budget
@@ -43,17 +48,18 @@ Travel Explorer allows users to explore destinations, register/login securely, m
 
 ## 🔐 Authentication & Security
 
-The application uses **JWT (JSON Web Tokens)** for authentication.
+The application uses **JWT (JSON Web Tokens)** for authentication and authorization.
 
-### Authentication flow
+### Authentication Flow
 
 1. User registers an account.
 2. Password is securely hashed using bcrypt.
-3. User logs in with email and password.
+3. User logs in using email and password.
 4. Backend generates a JWT token.
 5. Token is stored in the browser's local storage.
 6. Protected API requests send the token using the `Authorization` header.
 7. Admin routes additionally verify the user's admin role.
+8. Unauthorized users are prevented from accessing protected resources.
 
 Sensitive environment variables such as MongoDB credentials and JWT secrets are stored in `.env` files and excluded from Git using `.gitignore`.
 
@@ -94,6 +100,12 @@ Sensitive environment variables such as MongoDB credentials and JWT secrets are 
 * VS Code
 * Postman
 * Nodemon
+
+### Deployment
+
+* GitHub Pages — Frontend
+* Render — Backend
+* MongoDB Atlas — Database
 
 ---
 
@@ -158,40 +170,30 @@ responsive_travel_website/
 ## 🔄 Application Flow
 
 ```text
-User
- │
- ├── Register
- │      ↓
- │   MongoDB
- │
- ├── Login
- │      ↓
- │   JWT Token
- │
- ├── Explore Destinations
- │
- ├── Create Booking
- │      ↓
- │   MongoDB
- │
- └── My Bookings
-        │
-        └── View / Delete
-
-
-Admin
- │
- └── Admin Login
-        ↓
-   JWT + Admin Role
-        ↓
-   Admin Dashboard
-        │
-        ├── Users
-        ├── Bookings
-        ├── Budget
-        ├── Destinations
-        └── Statistics
+                         TRAVEL EXPLORER
+                                │
+                ┌───────────────┴───────────────┐
+                │                               │
+              USER                            ADMIN
+                │                               │
+          Register / Login                  Admin Login
+                │                               │
+                ↓                               ↓
+          JWT Authentication              JWT + Admin Role
+                │                               │
+                ↓                               ↓
+        Explore Destinations             Admin Dashboard
+                │                               │
+                ↓                       ┌───────┼────────┐
+          Create Booking                │       │        │
+                │                    Users   Bookings  Statistics
+                ↓
+          MongoDB Atlas
+                │
+                ↓
+          My Bookings
+                │
+          View / Delete
 ```
 
 ---
@@ -249,18 +251,20 @@ Open the frontend using a local development server such as **VS Code Live Server
 
 ## 🗄️ Database
 
-Travel Explorer uses **MongoDB Atlas** as its database.
+Travel Explorer uses **MongoDB Atlas** as its cloud database.
 
-The application stores information such as:
+### Users Collection
 
-### Users
+The application stores:
 
 * Name
 * Email
 * Password
 * Role
 
-### Bookings
+### Bookings Collection
+
+The application stores:
 
 * User
 * Destination
@@ -282,13 +286,14 @@ It includes:
 * Booking deletion
 * Total users
 * Total bookings
-* Total budget
+* Total booking budget
 * Destination count
 * Popular destination analysis
 * Hotel selection analysis
 * Budget analysis
+* Recent bookings
 
-The dashboard is protected using JWT authentication and admin-role authorization.
+The dashboard is protected using **JWT authentication** and **admin-role authorization**.
 
 ---
 
@@ -303,37 +308,77 @@ Travel Explorer is designed to work across:
 
 The navigation, booking forms, dashboard and content sections adapt to smaller screen sizes.
 
+The application was also tested using a mobile device while communicating with the deployed backend.
+
 ---
 
 ## 🧪 API Testing
 
 The backend APIs were tested using **Postman** during development.
 
-Authentication, booking, protected routes and admin APIs were tested before integrating them with the frontend.
+The following functionality was tested:
+
+* User registration
+* User login
+* JWT authentication
+* Protected routes
+* Booking creation
+* Booking retrieval
+* Booking deletion
+* Admin routes
+* Admin authorization
 
 ---
 
 ## 🚀 Deployment
 
-The project is currently being prepared for deployment.
+Travel Explorer is deployed as a full-stack application.
 
-The deployment plan is:
+### Frontend
+
+Hosted using **GitHub Pages**:
+
+**https://pranav5458.github.io/responsive_travel_website/**
+
+### Backend
+
+Hosted using **Render**:
+
+**https://responsive-travel-website-wq53.onrender.com**
+
+### Database
+
+Hosted using **MongoDB Atlas**.
+
+### Deployment Architecture
 
 ```text
-Frontend
-   ↓
-GitHub Pages / Static Hosting
-
-Backend
-   ↓
-Cloud Backend Hosting
-
-Database
-   ↓
-MongoDB Atlas
+                         USER
+                          │
+                          ↓
+                 GitHub Pages
+                  Frontend UI
+                          │
+                          │ HTTPS API Requests
+                          ↓
+                    Render
+               Node.js + Express
+                          │
+                          │ Mongoose
+                          ↓
+                  MongoDB Atlas
+                     Database
 ```
 
-Live deployment URLs will be added here after deployment is completed.
+---
+
+## 🔗 Project Links
+
+| Resource             | Link                                                    |
+| -------------------- | ------------------------------------------------------- |
+| 🌐 Live Website      | https://pranav5458.github.io/responsive_travel_website/ |
+| ⚙️ Backend API       | https://responsive-travel-website-wq53.onrender.com     |
+| 💻 GitHub Repository | https://github.com/pranav5458/responsive_travel_website |
 
 ---
 
