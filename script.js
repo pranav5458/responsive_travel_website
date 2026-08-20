@@ -830,7 +830,7 @@ if (bookingForm) {
             try {
 
                 const response = await fetch(
-                    "http://10.84.57.106:5000/api/bookings",
+                    "https://responsive-travel-website-wq53.onrender.com/api/bookings",
                     {
 
                         method: "POST",
@@ -1040,7 +1040,7 @@ if (loginForm) {
         try {
 
             const response = await fetch(
-                "http://10.84.57.106:5000/api/auth/login",
+                "https://responsive-travel-website-wq53.onrender.com/api/auth/login",
                 {
                     method: "POST",
 
@@ -1188,7 +1188,7 @@ if (registerForm) {
         try {
 
             const response = await fetch(
-                "http://10.84.57.106:5000/api/auth/register",
+                "https://responsive-travel-website-wq53.onrender.com/api/auth/register",
                 {
                     method: "POST",
 

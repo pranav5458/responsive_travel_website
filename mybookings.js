@@ -46,7 +46,7 @@ async function loadBookings() {
     try {
 
         const response = await fetch(
-            "http://10.84.57.106:5000/api/bookings",
+            "http://https://responsive-travel-website-wq53.onrender.com//api/bookings",
             {
                 method: "GET",
 
@@ -421,7 +421,7 @@ async function cancelBooking(bookingId) {
 
         const response =
             await fetch(
-                `http://10.84.57.106:5000/api/bookings/${bookingId}`,
+                `http://https://responsive-travel-website-wq53.onrender.com//api/bookings/${bookingId}`,
                 {
                     method: "DELETE",
 

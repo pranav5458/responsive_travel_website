@@ -7,7 +7,7 @@
 // API URL
 // ==========================================
 
-const API_URL = "http://10.84.57.106:5000";
+const API_URL = "https://responsive-travel-website-wq53.onrender.com";
 
 
 // ==========================================
